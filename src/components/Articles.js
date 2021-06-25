@@ -7,7 +7,7 @@ import PulseLoader from "react-spinners/PulseLoader";
 export default function Articles({ setArticleId }) {
   const { isLoading, error, data } = useQuery("articles", () =>
     fetch(
-      `https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=tAiWH2ky6IOkkNCfLbViLtRsJiBtG08T`
+      `https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=${process.env.REACT_APP_NYT_API}`
     ).then((res) => res.json())
   );
 
